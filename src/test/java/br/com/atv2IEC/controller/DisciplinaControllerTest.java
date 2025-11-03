@@ -29,7 +29,7 @@ class DisciplinaControllerTest {
     void testBuscarPorIdValido() {
         ResponseEntity<Disciplina> response = controller.buscarPorId(1);
         assertEquals(200, response.getStatusCodeValue());
-        assertEquals("Programação Web", response.getBody().getNome());
+        assertEquals("Laboratório de Desenvolvimento Web", response.getBody().getNome());
     }
 
     @Test
@@ -40,7 +40,7 @@ class DisciplinaControllerTest {
 
     @Test
     void testCriarDisciplina() {
-        Disciplina nova = new Disciplina(null, "Engenharia de Software", "Prof. Lima");
+        Disciplina nova = new Disciplina(null, "Integração e Entrega Contínua", "Prof. Icaro Davies");
         ResponseEntity<Disciplina> response = controller.criar(nova);
         assertEquals(201, response.getStatusCodeValue());
         assertNotNull(response.getBody().getId());
